@@ -1,0 +1,104 @@
+/*
+Write a C program to print a table of all the Roman numeral equivalents of the decimal numbers in the range
+1 to 50.
+Sample Output:
+Decimal  Roman
+number   numeral
+-------------------
+1        I
+2        II
+3        III
+4        IV
+.....
+98        LXXXXVIII
+99        LXXXXIX
+100        C
+*/
+
+#include<stdio.h>
+
+int main()
+{
+    int i, n;
+
+    printf("Decimal       Roman\n");
+    printf("number        numeral\n");
+    printf("-----------------------\n");
+
+    for(i=1; i<=1000; i++)
+    {
+        n=i;
+        printf("%d\t\t", i);
+        while(n != 0)
+        {
+            if (n >= 1000)
+            {
+                printf("M");
+                n -= 1000;
+            }
+            else if (n >= 900)
+            {
+                printf("CM");
+                n -= 900;
+            }
+            else if (n >= 500)
+            {
+                printf("D");
+                n -= 500;
+            }
+            else if (n >= 400)
+            {
+                printf("CD");
+                n -= 400;
+            }
+            else if (n >= 100)
+            {
+                printf("C");
+                n -= 100;
+            }
+            else if (n >= 90)
+            {
+                printf("XC");
+                n -= 90;
+            }
+            else if (n >= 50)
+            {
+                printf("L");
+                n -= 50;
+            }
+            else if (n >= 40)
+            {
+                printf("XL");
+                n -= 40;
+            }
+            else if (n >= 10)
+            {
+                printf("X");
+                n -= 10;
+            }
+            else if (n >= 9)
+            {
+                printf("IX");
+                n -= 9;
+            }
+            else if (n >= 5)
+            {
+                printf("V");
+                n -= 5;
+            }
+            else if (n >= 4)
+            {
+                printf("IV");
+                n -= 4;
+            }
+            else if (n >= 1)
+            {
+                printf("I");
+                n -= 1;
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
